@@ -9,6 +9,7 @@ import { ArrowRight, Bot, Code, ShoppingCart, Smartphone, PenTool, CheckCircle, 
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import Link from 'next/link';
+import { ConsultationDialog } from '@/components/consultation-dialog';
 
 export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -32,7 +33,7 @@ export default function Home() {
               Мы — команда экспертов, которая превращает идеи в успешные проекты.
             </p>
             <div className="mt-8">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6" onClick={() => setIsDialogOpen(true)}>
                 Начать проект
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -105,21 +106,21 @@ export default function Home() {
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-12">
               <div className="group relative overflow-hidden rounded-lg">
-                <Image src="https://placehold.co/600x400.png" alt="Проект 1" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="technology abstract" />
+                <Image src="https://placehold.co/600x400.png" alt="Проект 1" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="online learning platform" />
                 <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
                   <h3 className="text-xl font-bold text-white">Платформа для онлайн-обучения</h3>
                   <p className="text-sm text-gray-300">Веб-сервис</p>
                 </div>
               </div>
               <div className="group relative overflow-hidden rounded-lg">
-                <Image src="https://placehold.co/600x400.png" alt="Проект 2" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="finance app" />
+                <Image src="https://placehold.co/600x400.png" alt="Проект 2" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="mobile banking business" />
                 <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
                   <h3 className="text-xl font-bold text-white">Мобильный банк для бизнеса</h3>
                   <p className="text-sm text-gray-300">Финтех</p>
                 </div>
               </div>
               <div className="group relative overflow-hidden rounded-lg">
-                <Image src="https://placehold.co/600x400.png" alt="Проект 3" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="retail e-commerce" />
+                <Image src="https://placehold.co/600x400.png" alt="Проект 3" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="local brands marketplace" />
                 <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
                   <h3 className="text-xl font-bold text-white">Маркетплейс для локальных брендов</h3>
                   <p className="text-sm text-gray-300">E-commerce</p>
@@ -127,7 +128,9 @@ export default function Home() {
               </div>
             </div>
              <div className="text-center mt-12">
-                <Button variant="outline" size="lg">Смотреть все проекты</Button>
+                <Button variant="outline" size="lg" asChild>
+                  <Link href="#cases">Смотреть все проекты</Link>
+                </Button>
             </div>
           </div>
         </section>
@@ -174,9 +177,9 @@ export default function Home() {
                 </div>
            </div>
         </section>
-
       </main>
-      <Footer />
+      <Footer onProjectClick={() => setIsDialogOpen(true)} />
+      <ConsultationDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
     </div>
   );
 }
