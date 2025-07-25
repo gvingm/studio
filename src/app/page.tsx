@@ -107,21 +107,21 @@ export default function Home() {
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-12">
               <div className="group relative overflow-hidden rounded-lg">
-                <Image src="https://placehold.co/600x400.png" alt="Проект 1" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="digital learning app" />
+                <Image src="https://polza-agency-assets.s3.eu-central-1.amazonaws.com/website/case-stavki.jpg" alt="Проект 1" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
                   <h3 className="text-xl font-bold text-white">Платформа для онлайн-обучения</h3>
                   <p className="text-sm text-gray-300">Веб-сервис</p>
                 </div>
               </div>
               <div className="group relative overflow-hidden rounded-lg">
-                <Image src="https://placehold.co/600x400.png" alt="Проект 2" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="corporate mobile banking" />
+                <Image src="https://polza-agency-assets.s3.eu-central-1.amazonaws.com/website/case-invest-club.jpg" alt="Проект 2" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
                   <h3 className="text-xl font-bold text-white">Мобильный банк для бизнеса</h3>
                   <p className="text-sm text-gray-300">Финтех</p>
                 </div>
               </div>
               <div className="group relative overflow-hidden rounded-lg">
-                <Image src="https://placehold.co/600x400.png" alt="Проект 3" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="clothing brand marketplace" />
+                <Image src="https://polza-agency-assets.s3.eu-central-1.amazonaws.com/website/case-hypeme.jpg" alt="Проект 3" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
                   <h3 className="text-xl font-bold text-white">Маркетплейс для локальных брендов</h3>
                   <p className="text-sm text-gray-300">E-commerce</p>
@@ -190,5 +190,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
