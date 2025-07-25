@@ -17,15 +17,15 @@ type ConsultationDialogProps = {
 export function ConsultationDialog({ open, onOpenChange }: ConsultationDialogProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent>
+      <DialogContent className="bg-card border-border">
         <DialogHeader>
-          <DialogTitle>Request a Consultation</DialogTitle>
+          <DialogTitle>Начать проект</DialogTitle>
           <DialogDescription>
-            We're excited to learn about your needs. Please contact us at{' '}
-            <a href="mailto:contact@altitudecloud.com" className="text-primary hover:underline">
-              contact@altitudecloud.com
+            Готовы обсудить вашу идею? Свяжитесь с нами по почте{' '}
+            <a href="mailto:start@polza.agency" className="text-primary hover:underline">
+              start@polza.agency
             </a>{' '}
-            to schedule a consultation with our experts.
+            и мы назначим встречу.
           </DialogDescription>
         </DialogHeader>
       </DialogContent>
