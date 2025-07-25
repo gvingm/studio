@@ -20,8 +20,9 @@ export default function Home() {
       <main className="flex-1">
         <section className="w-full pt-28 md:pt-40 lg:pt-48 pb-16 md:pb-24 lg:pb-32 relative">
            <div
-            className="absolute inset-0 bg-grid-pattern opacity-10"
+            className="absolute inset-0 bg-cover bg-center opacity-10"
             style={{
+              backgroundImage: "url('https://polza-agency-assets.s3.eu-central-1.amazonaws.com/website/bg-hero.jpg')",
               maskImage: 'linear-gradient(to bottom, white 5%, transparent 80%)',
             }}
           />
@@ -106,21 +107,21 @@ export default function Home() {
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-12">
               <div className="group relative overflow-hidden rounded-lg">
-                <Image src="https://placehold.co/600x400.png" alt="Проект 1" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="online learning platform" />
+                <Image src="https://placehold.co/600x400.png" alt="Проект 1" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="digital learning app" />
                 <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
                   <h3 className="text-xl font-bold text-white">Платформа для онлайн-обучения</h3>
                   <p className="text-sm text-gray-300">Веб-сервис</p>
                 </div>
               </div>
               <div className="group relative overflow-hidden rounded-lg">
-                <Image src="https://placehold.co/600x400.png" alt="Проект 2" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="mobile banking business" />
+                <Image src="https://placehold.co/600x400.png" alt="Проект 2" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="corporate mobile banking" />
                 <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
                   <h3 className="text-xl font-bold text-white">Мобильный банк для бизнеса</h3>
                   <p className="text-sm text-gray-300">Финтех</p>
                 </div>
               </div>
               <div className="group relative overflow-hidden rounded-lg">
-                <Image src="https://placehold.co/600x400.png" alt="Проект 3" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="local brands marketplace" />
+                <Image src="https://placehold.co/600x400.png" alt="Проект 3" width={600} height={400} className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="clothing brand marketplace" />
                 <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
                   <h3 className="text-xl font-bold text-white">Маркетплейс для локальных брендов</h3>
                   <p className="text-sm text-gray-300">E-commerce</p>
@@ -135,8 +136,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-card">
-           <div className="container mx-auto px-4 md:px-6">
+        <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-card relative">
+            <div
+                className="absolute inset-0 bg-cover bg-center opacity-5"
+                style={{
+                backgroundImage: "url('https://polza-agency-assets.s3.eu-central-1.amazonaws.com/website/bg-about.png')",
+                }}
+            />
+           <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div>
                         <p className="text-primary font-semibold mb-2">О нас</p>
@@ -183,3 +190,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

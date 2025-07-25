@@ -16,8 +16,16 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'polza-agency-assets.s3.eu-central-1.amazonaws.com',
+        port: '',
+        pathname: '/**',
+      }
     ],
   },
 };
 
 export default nextConfig;
+
+    
