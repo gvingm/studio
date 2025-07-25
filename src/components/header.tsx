@@ -1,10 +1,17 @@
+
+'use client';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, ArrowRight } from 'lucide-react';
 
-export function Header() {
+type HeaderProps = {
+  onConsultationClick?: () => void;
+};
+
+export function Header({ onConsultationClick }: HeaderProps) {
   return (
     <header className="px-4 lg:px-6 h-20 flex items-center shadow-sm bg-card/80 backdrop-blur-sm sticky top-0 z-50">
       <Link href="/" className="flex items-center justify-center mr-auto">
@@ -20,7 +27,7 @@ export function Header() {
         <Link className="text-sm font-medium hover:text-primary transition-colors" href="#ai-tool">
           AI Tool
         </Link>
-        <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
+        <Button className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={onConsultationClick}>
           Request a Consultation
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
@@ -47,7 +54,7 @@ export function Header() {
               <Link className="font-medium" href="#ai-tool">
                 AI Tool
               </Link>
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 w-full mt-4">
+              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 w-full mt-4" onClick={onConsultationClick}>
                 Request a Consultation
               </Button>
             </div>

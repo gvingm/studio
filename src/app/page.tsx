@@ -1,3 +1,7 @@
+
+'use client';
+
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -6,11 +10,15 @@ import { Cpu, HardDrive, Network, CheckCircle, ArrowRight } from 'lucide-react';
 import HeadlineGenerator from '@/components/headline-generator';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { ConsultationDialog } from '@/components/consultation-dialog';
+import Link from 'next/link';
 
 export default function Home() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
-      <Header />
+      <Header onConsultationClick={() => setIsDialogOpen(true)} />
       <main className="flex-1">
         <section className="w-full py-20 md:py-32 lg:py-40">
           <div className="container mx-auto px-4 md:px-6 text-center">
@@ -21,7 +29,7 @@ export default function Home() {
               Altitude Cloud provides the secure, scalable, and reliable infrastructure your business needs to innovate and grow without limits. Experience unparalleled performance with a platform designed for the enterprise.
             </p>
             <div className="mt-8 flex justify-center gap-4">
-              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={() => setIsDialogOpen(true)}>
                 Request a Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -58,7 +66,9 @@ export default function Home() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button variant="outline" className="w-full">Learn More</Button>
+                  <Button variant="outline" className="w-full" asChild>
+                    <Link href="#products">Learn More</Link>
+                  </Button>
                 </CardFooter>
               </Card>
               <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -79,7 +89,9 @@ export default function Home() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button variant="outline" className="w-full">Learn More</Button>
+                   <Button variant="outline" className="w-full" asChild>
+                    <Link href="#products">Learn More</Link>
+                  </Button>
                 </CardFooter>
               </Card>
               <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -100,7 +112,9 @@ export default function Home() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button variant="outline" className="w-full">Learn More</Button>
+                   <Button variant="outline" className="w-full" asChild>
+                    <Link href="#products">Learn More</Link>
+                  </Button>
                 </CardFooter>
               </Card>
             </div>
@@ -176,7 +190,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mx-auto w-full max-w-sm space-y-2">
-               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full">
+               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full" onClick={() => setIsDialogOpen(true)}>
                 Request a Consultation
               </Button>
             </div>
@@ -184,6 +198,7 @@ export default function Home() {
         </section>
       </main>
       <Footer />
+      <ConsultationDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
     </div>
   );
 }
